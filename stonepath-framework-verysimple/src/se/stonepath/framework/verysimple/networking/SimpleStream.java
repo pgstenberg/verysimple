@@ -26,6 +26,16 @@ public class SimpleStream {
 		return identifier;
 	}
 	
+	public void close() throws SimpleStreamException{
+		
+		try {
+			output.close();
+			input.close();
+		} catch (IOException e) {
+			throw new SimpleStreamException("Unable to close streams.");
+		}
+	}
+	
 	public Packet receivePacket() throws SimpleStreamException{
 		try {
 			ObjectInputStream objectInput = new ObjectInputStream(input);

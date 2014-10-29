@@ -11,16 +11,9 @@ import se.stonepath.framework.verysimple.networking.exception.SimpleStreamExcept
 public class PingDelegate implements Delegate{
 
 	
-	public void execute(SimpleStream stream,Object... params) {
-		
-		try {
-			
-			
+	public void execute(SimpleStream stream,Object... params) throws SimpleStreamException {
 			stream.sendPacket(new Packet("ping"));
-		} catch (SimpleStreamException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 	}
 

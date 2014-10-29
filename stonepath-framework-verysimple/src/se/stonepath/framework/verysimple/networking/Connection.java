@@ -27,14 +27,15 @@ public class Connection {
 				throw (Exception)respondPacket.getContent()[0];
 			}
 			
+			simpleStream.close();
 			socket.close();
 			
 			return respondPacket;
 			
 		} catch (UnknownHostException e) {
-			throw new ServerException("Host not found.");
+			throw new ServerException("Host not found (" + e.getMessage() + ")");
 		} catch (IOException e) {
-			throw new ServerException("IO ERROR.");
+			throw new ServerException("Unable to reach host (" + e.getMessage() + ")");
 		} 
 	}
 }
