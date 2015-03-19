@@ -1,12 +1,16 @@
 package se.stonepath.framework.verysimple.networking.client;
 
+import java.io.Serializable;
+
 import se.stonepath.framework.verysimple.networking.Connection;
 import se.stonepath.framework.verysimple.networking.data.Packet;
 
 
 
-public class Client {
+public class Client implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String host;
 	private int port;
 	
